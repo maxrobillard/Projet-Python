@@ -28,6 +28,16 @@ jeunes_morts = pd.read_csv("data/jeunes_morts_cont.csv")
 pays_possibles = jeunes_morts.Country.unique()
 continents_possibles = youth.Continent.unique()
 
+
+moy = youth.groupby('Continent').mean()
+moy
+fig3 = px.bar(moy , y = '15-19 years old, current drinkers both sexes (%)',
+                labels={'15-19 years old, current drinkers both sexes (%)':"consommation d'alcool<br> pour les 15-19 ans"},
+                template = "plotly_dark",
+            )
+fig3.update_layout(barmode='stack', xaxis={'categoryorder':'total descending'})
+
+
 tab_total = dbc.Card(
     dbc.CardBody([
         dbc.Row([
@@ -49,6 +59,15 @@ tab_total = dbc.Card(
             dbc.Col([
                 dcc.Graph(
                     id='map2',
+                ),
+            ]),
+        ]),
+        dbc.Row([
+            dbc.Col([
+                dcc.Graph(
+                    id='histogramme', figure = fig3,
+                    style = {'width': '100%','height': '100%',"background":"#000000"},
+
                 ),
             ]),
         ]),
