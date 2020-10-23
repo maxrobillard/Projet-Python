@@ -35,26 +35,15 @@ print(csv)
 pays_possibles = recuperationDataAccident("PaysSelect")
 data = pd.read_csv("data/tolerance_compl.csv")
 dataSelect,dataFrench = recuperationDataTolerance("MapTolerance")
-fig2 = px.choropleth(csv , locations='COUNTRY', color="Value",
-                           animation_frame = "Year",
-                           color_continuous_scale="Peach",
-                           range_color=(0, 10000),
-                           scope="world",
-                           labels={"Value":"Nombre de morts"},
-                           template="plotly_dark",
-                          )
 
-fig2.update_layout(margin={"r":0,"t":30,"l":0,"b":30}),
 
-fig1 = choroplethGraph("world",data,dataSelect,dataFrench,"Viridis")
 
 
 #fig2 = choroplethGraph("world",jm,"Value","Valeur","Viridis")
 
 tolerance = html.Div(
                 dcc.Graph(
-                        id="map",
-                        figure=fig1,
+                        id="MapTolerance",
                         ),
                 )
 
@@ -69,7 +58,7 @@ layout = html.Div([
     html.Div([
         html.H1(["Visualisation sur la législation liée à l'alcool et les accidents de la route"],style={"color":"white","text-align":"center",}),
         dbc.Row([
-                dbc.Col([
+                html.Div([
                     dcc.Dropdown(
                         id='xaxis-column1',
                         options=[{'label':"Europe","value":"europe"},
@@ -79,8 +68,13 @@ layout = html.Div([
                                  {'label':"Amerique du sud","value":"south america"},
                                  {'label':"Monde","value":"world"},
                         ],
-                        value='europe',
-                    ),
+                        value='europe'
+                    )],
+                    style={"width":"95%","height":"100%","display":"inline-block","margin-left":"50px","margin-right":"50px"}
+                ),
+            ]),
+            dbc.Row([
+                dbc.Col([
                     Accidents,
                 ],md=6),
                 dbc.Col([
@@ -140,5 +134,14 @@ def update_graph(scope):
                                template="plotly_dark",
                               )
 
+    fig.update_layout(margin={"r":0,"t":30,"l":0,"b":30}),
+    return fig
+
+@app.callback(
+    Output('MapTolerance', 'figure'),
+    [Input('xaxis-column1', 'value')])
+
+def update_graph(scope):
+    fig = choroplethGraph(scope,data,dataSelect,dataFrench,"Viridis")
     fig.update_layout(margin={"r":0,"t":30,"l":0,"b":30}),
     return fig
