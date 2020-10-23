@@ -3,9 +3,9 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 from apps.nav import NavBar
 import plotly.express as px
-import pandas as pd
 from app import app
 import dash_bootstrap_components as dbc
+from data import recuperationDataAlcool
 
 active = "page1"
 nav = NavBar(active)
@@ -21,25 +21,26 @@ def choroplethGraph(scope,data,color,colorFrench,legendColor):
     return fig
 
 # Ouverture du csv
-youth = pd.read_csv("data/youth_cont.csv")
+youth = recuperationDataAlcool("data")
 # Data récupérant la moyenne du pourcentage d'alcool par continents
-moy = youth.groupby('Continent').mean()
+moy = recuperationDataAlcool("moyenne")
 
 # Data montrant le pourcentage de jeune qui consomme de l'alcool pour les 15-19 ans
-youthColor = '15-19 years old, current drinkers both sexes (%)'
-youthColorFrench = "consommation d'alcool<br> pour les 15-19 ans"
+youthColor,youthColorFrench = recuperationDataAlcool("total")
 
 # Data montrant le pourcentage de jeune homme qui consomme de l'alcool pour les 15-19 ans
-youthColorMan = '15-19 years old, current males drinkers (%)'
-youthColorManFrench ="consommation d'alcool<br> pour les hommes 15-19 ans"
+youthColorMan,youthColorManFrench = recuperationDataAlcool("man")
+
 # Data montrant le pourcentage de jeune femme qui consomme de l'alcool pour les 15-19 ans
-youthColorFemales = '15-19 years old, current females drinkers (%)'
-youthColorFemalesFrench = "consommation d'alcool<br> pour les femmes 15-19 ans"
+youthColorFemales,youthColorFemalesFrench = recuperationDataAlcool("female")
+
+# Data pour récupérer les pays et continents
+continents_possibles = recuperationDataAlcool("continent")
 
 # Figure map consommation d'alcool h+f
 figTotal = choroplethGraph("world",youth,youthColor,youthColorFrench,"Peach")
 figTotal.update_layout(title_text = "% de jeune consommant de l'alcool"),
-figTotal.update_layout(margin={"r":0,"t":30,"l":0,"b":30}),
+
 
 figTotal3 = px.bar(moy , y = youthColor,
                 labels={youthColor:youthColorFrench},
@@ -67,10 +68,7 @@ figTotalFemales3 = px.bar(moy , y = youthColorFemales,
             )
 figTotalFemales3.update_layout(barmode='stack', xaxis={'categoryorder':'total descending'})
 
-# Data pour récupérer les pays et continents
-jeunes_morts = pd.read_csv("data/jeunes_morts_cont.csv")
-pays_possibles = jeunes_morts.Country.unique()
-continents_possibles = youth.Continent.unique()
+
 
 #style défaut
 StyleDropDown = {"width":"95%","height":"100%","display":"inline-block","margin-left":"50px","margin-right":"50px"}
