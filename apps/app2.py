@@ -30,7 +30,6 @@ def choroplethGraph(scope,data,color,colorFrench,legendColor):
 jeunes_morts = recuperationDataAccident("data")
 #-----------------------------------------------------------------------------------------
 csv = recuperationDataAccident("dataClear")
-print(csv)
 #------------------------------------------------------------------------------------------
 pays_possibles = recuperationDataAccident("PaysSelect")
 data = pd.read_csv("data/tolerance_compl.csv")
@@ -127,7 +126,7 @@ def update_graph(scope):
         max = 50000
     fig = px.choropleth(csv , locations='COUNTRY', color="Value",
                                animation_frame = "Year",
-                               color_continuous_scale="Peach",
+                               color_continuous_scale="Burgyl",
                                range_color=(0, max),
                                scope=scope,
                                labels={"Value":"Nombre de morts"},

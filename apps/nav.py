@@ -15,7 +15,7 @@ def NavBar(active):
         [
             dbc.NavItem(dbc.Button("ALcool",outline=True,active=page1, href="page1",external_link=True,),className="p-2 bd-highlight"),
             dbc.NavItem(dbc.Button("Accident et legislation",outline=True, active=page2, href="page2",external_link=True,),className="p-2 bd-highlight"),
-            dbc.NavItem(dbc.Button("Téléchargement",outline=True, active=page3, href="page3",external_link=True,),className="p-2 bd-highlight"),
+            dbc.NavItem(dbc.Button("Visualisation CSV",outline=True, active=page3, href="page3",external_link=True,),className="p-2 bd-highlight"),
 
             dbc.Row([
                 dbc.NavItem(dbc.Input(type="search",placeholder="Recherche")),
