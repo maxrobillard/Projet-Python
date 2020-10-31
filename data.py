@@ -69,6 +69,7 @@ def recuperationDataAccident(type):
     elif type == "MapAccident":
         csv = recuperationDataAccident("dataClear")
         column = "Value"
+        return csv,column
     elif type == "PaysSelect":
         pays = csv.Country.unique()
         return pays

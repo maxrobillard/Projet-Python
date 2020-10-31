@@ -61,6 +61,33 @@ Le dossier **apps** se compose d'un dossier pycache et de 6 fichiers :
 Le dossier **data** est le dossier où se trouve les csv nécessaire à l'application.<br>
 Le dossier **Rapport** comprend les captures d'écrans des différents graphes affichés.<br>
 
+#### Les différentes fonctions présentent dans le projet
+
+Dans le fichier main.py<br>
+> La fonction display_page(pathname) prend en parametre une string et renvoie la bonne affichage en fonction de l'url
+
+Dans le fichier app1.py<br>
+> La fonction recuperationDataAlcool(type) prend en parametre une string et renvoie les informations voulues.<br>
+Pour la string : <br>
+> - "data" la fonction ouvre le csv et le retourne<br>
+> - "total" la fonction renvoie le nom de la colonne du csv qui selectionne le pourcentage totale (hommes+femmes) du nombre de consommateur d'alcool ainsi que le nom à afficher<br>
+> - "man" la fonction renvoie le nom de la colonne du csv qui selectionne le pourcentage d'hommes consommant de l'alcool ainsi que le nom à afficher<br>
+> - "female" la fonction renvoie le nom de la colonne du csv qui selectionne le pourcentage de femmes consommant de l'alcool ainsi que le nom à afficher<br>
+> - "moyenne" renvoie la moyenne par continent de consommateur d'alcool<br>
+> - "continent" renvoie la liste des continents<br>
+
+> La fonction recuperationDataAccident(type) prend en parametre une string et renvoie les informations voulues.<br>
+> Pour la string : <br>
+> - "data" la fonction ouvre le csv et le retourne<br>
+> - "dataClear" la fonction nettoye les données en supprimant toutes les lignes inutiles et renvoie les données nécessaire<br>
+> - "MapAccident" la fonction nettoye les données et renvoie les données nécessaire ainsi que le nom de la colonne à sélectionner<br>
+> - "PaysSelect" la fonction retourne la liste des pays possibles<br>
+
+> La fonction recuperationDataTolerance(type) prend en parametre une string et renvoie les informations voulues.<br>
+> Pour la string : <br>
+> - "data" la fonction ouvre le csv et le retourne<br>
+> - "MapTolerance" la fonction retourne le nom de la colonne à selectionner pour la création d'une carte ainsi que le nom à afficher en français<br>
+
 ## Rapport d'analyse
 
 Les résultats obtenus montrent une nette diminution du nombre d'accidents de la route chez les jeunes.

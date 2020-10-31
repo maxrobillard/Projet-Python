@@ -34,7 +34,7 @@ youthColorMan,youthColorManFrench = recuperationDataAlcool("man")
 # Data montrant le pourcentage de jeune femme qui consomme de l'alcool pour les 15-19 ans
 youthColorFemales,youthColorFemalesFrench = recuperationDataAlcool("female")
 
-# Data pour récupérer les pays et continents
+# Data pour récupérer les continents
 continents_possibles = recuperationDataAlcool("continent")
 
 # Figure map consommation d'alcool h+f
@@ -96,7 +96,7 @@ tab_total = dbc.Card(
             ]),
         ]),
         dbc.Row([
-            MenuDeroulantMap("pays_select"),
+            MenuDeroulantMap("continent_select"),
         ],style= StyleDropDown ),
         dbc.Row([
             dbc.Col([
@@ -129,7 +129,7 @@ tab_homme = dbc.Card(
             ]),
         ]),
         dbc.Row([
-            MenuDeroulantMap("pays_select2"),
+            MenuDeroulantMap("continent_select2"),
         ],style= StyleDropDown ),
         dbc.Row([
             dbc.Col([
@@ -162,7 +162,7 @@ tab_femme = dbc.Card(
             ]),
         ]),
         dbc.Row([
-            MenuDeroulantMap("pays_select3"),
+            MenuDeroulantMap("continent_select3"),
         ],style= StyleDropDown ),
         dbc.Row([
             dbc.Col([
@@ -200,31 +200,31 @@ layout = html.Div([
 ]),
 
 #Interprétation menu déroulant
-def InterMenu(pays_selected):
-    pays = "europe"
+def InterMenu(continent_selected):
+    continent = "europe"
     name = "Europe"
-    if pays_selected == "SA":
-        pays = "south america"
+    if continent_selected == "SA":
+        continent = "south america"
         name = "Amerique du sud"
-    elif pays_selected == "AS":
-        pays = "asia"
+    elif continent_selected == "AS":
+        continent = "asia"
         name = "Asie"
-    elif pays_selected == "AF":
-        pays = "africa"
+    elif continent_selected == "AF":
+        continent = "africa"
         name = "Afrique"
     else :
-        pays = "europe"
+        continent = "europe"
 
-    return pays,name
+    return continent,name
 
 
 @app.callback(
     Output("map2","figure"),
-    [Input("pays_select","value")]
+    [Input("continent_select","value")]
 )
-def upgrade_map(pays_select):
-    pays,name = InterMenu(pays_select)
-    fig2 = choroplethGraph(pays,youth,youthColor,youthColorFrench,"Viridis")
+def upgrade_map(continent_select):
+    continent,name = InterMenu(continent_select)
+    fig2 = choroplethGraph(continent,youth,youthColor,youthColorFrench,"Viridis")
     fig2.update_layout(title_text = "% de jeune consommant de l'alcool en "+ name),
     fig2.update_layout(margin={"r":0,"t":30,"l":0,"b":0})
 
@@ -232,11 +232,11 @@ def upgrade_map(pays_select):
 
 @app.callback(
     Output("mapMan2","figure"),
-    [Input("pays_select2","value")]
+    [Input("continent_select2","value")]
 )
-def upgrade_map(pays_select):
-    pays,name = InterMenu(pays_select)
-    fig2 = choroplethGraph(pays,youth,youthColorMan,youthColorManFrench,"Viridis")
+def upgrade_map(continent_select):
+    continent,name = InterMenu(continent_select)
+    fig2 = choroplethGraph(continent,youth,youthColorMan,youthColorManFrench,"Viridis")
     fig2.update_layout(title_text = "% de jeunes hommes consommant de l'alcool en "+ name),
     fig2.update_layout(margin={"r":0,"t":30,"l":0,"b":0})
 
@@ -244,11 +244,11 @@ def upgrade_map(pays_select):
 
 @app.callback(
     Output("mapFemales2","figure"),
-    [Input("pays_select3","value")]
+    [Input("continent_select3","value")]
 )
-def upgrade_map(pays_select):
-    pays,name = InterMenu(pays_select)
-    fig2 = choroplethGraph(pays,youth,youthColorFemales,youthColorFemalesFrench,"Viridis")
+def upgrade_map(continent_select):
+    continent,name = InterMenu(continent_select)
+    fig2 = choroplethGraph(continent,youth,youthColorFemales,youthColorFemalesFrench,"Viridis")
     fig2.update_layout(title_text = "% de jeunes femmes consommant de l'alcool en "+ name),
     fig2.update_layout(margin={"r":0,"t":30,"l":0,"b":0})
 
