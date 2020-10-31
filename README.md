@@ -45,7 +45,7 @@ Les résultats obtenus montrent une nette diminution du nombre d'accidents de la
 C'est en Europe et en Amérique du Sud que les jeunes consomment le plus d'alcool (53% des jeunes en consomment en Europe, et 36% en Amérique du Sud).
 
 &nbsp;
-![HistogrammeMoyenneAlcool](Rapport/HistogrammeMoyenneAlcool.jpeg)
+![HistogrammeMoyenneAlcool](Rapport/HistogrammeMoyenneAlcool.JPG)
 &nbsp;
 
 
