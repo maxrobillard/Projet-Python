@@ -37,20 +37,18 @@ def recuperationDataAccident(type):
                 if i!=15:
                     if i!=27:
                         data=data.drop(data.index[start1:stop1])
-                        print(data[0+(17*i):17+(17*i)])
-                        print(0+(17*i),17+(17*i))
                     else :
                         stop1+=-22
                         data=data.drop(data.index[start1:stop1])
-                        print(data[459:476])
+
                 else :
                     stop1+=-189
                     data=data.drop(data.index[start1:stop1])
-                    print(data[255:275])
+
             else :
                 stop1+=-20
                 data=data.drop(data.index[start1:stop1])
-                print(data[180:221])
+
 
         return data
 
