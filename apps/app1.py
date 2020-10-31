@@ -9,7 +9,7 @@ from data import recuperationDataAlcool
 
 active = "page1"
 nav = NavBar(active)
-
+# création d'une fonction qui retourne une map, elle prend en paramètres le scope(localsiation), data(les données),colorFrench(nom francais),legendColor(Couleur d'affiche des données)
 def choroplethGraph(scope,data,color,colorFrench,legendColor):
     fig = px.choropleth(data , locations='Alpha-3 code', color=color,
                                color_continuous_scale=legendColor,
