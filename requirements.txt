@@ -1,0 +1,11 @@
+dash
+dash_bootstrap_components
+pandas
+dash_html_components
+dash_core_components
+dash.dependencies
+plotly.express
+base64
+datetime
+io
+dash_table

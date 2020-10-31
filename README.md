@@ -3,14 +3,20 @@
 
 ## Table des matières
 
- - [User's Guide](#user's-Guide)
- - [Developer's Guide](#developer's-Guide)
- - [Rapport d'analyse](#rapport-d'analyse)
+ - [Introduction](#Introduction)
+ - [User's Guide](#users-Guide)
+ - [Developer's Guide](#developers-Guide)
+ - [Rapport d'analyse](#rapport-danalyse)
  - [Lien vers les datasets](#lien-vers-les-datasets)
- - [Instructions d'execution](#instructions-d'execution)
+ - [Instructions d'execution](#instructions-dexecution)
 
+## Introduction
+
+Tous les ans, de jeunes conducteurs sont victimes d'accidents de la route, ce dashboard cherchera à savoir  si la consommation d'alcool des jeunes influe sur ce nombre d'accidents.
 
 ## User's Guide
+
+Afin d'exécuter sans erreur ce code, il faudra installer tous les packages suivant dans votre invite de commande en tapant ceci : pip install le_nom_du_package.
 
 Liste des librairies/packages utilisés :
 - dash
@@ -25,9 +31,9 @@ Liste des librairies/packages utilisés :
 - io
 - dash_table
 
-Afin d'exécuter sans erreur ce code, il faudra installer tous ces packages dans votre invité de commande en tapant ceci : pip install le_nom_du_package.
+Il vous ait aussi possible d'installer tous ces packages directement via le requirements.txt en tapant la commande : **$ pip install -r requirements.txt**
 
-URL du dashboard : http://127.0.0.1:5000
+Une fois les packages installés vous devez lancer l'application avec la commande : **py main.py**
 
 
 
@@ -37,6 +43,11 @@ URL du dashboard : http://127.0.0.1:5000
 
 Les résultats obtenus montrent une nette diminution du nombre d'accidents de la route chez les jeunes.
 C'est en Europe et en Amérique du Sud que les jeunes consomment le plus d'alcool (53% des jeunes en consomment en Europe, et 36% en Amérique du Sud).
+
+&nbsp;
+![HistogrammeMoyenneAlcool](./Rapport/HistogrammeMoyenneAlcool.jpeg)
+&nbsp;
+
 
 En Europe, la limite légale de concentration d'alcool dans le sang pour les jeunes conducteurs est d'environ 0.03g (en moyenne).
 Or, on voit qu'au fil du temps, le nombre d'accidents de la route baisse beaucoup dans tous les pays.
