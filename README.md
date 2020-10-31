@@ -3,8 +3,11 @@
 
 ## Table des matières
 
- - [User's Guide](#User's Guide)
- - [Developer's Guide](#Developer's Guide)
+ - [User's Guide](#user's-Guide)
+ - [Developer's Guide](#developer's-Guide)
+ - [Rapport d'analyse](#rapport-d'analyse)
+ - [Lien vers les datasets](#lien-vers-les-datasets)
+ - [Instructions d'execution](#instructions-d'execution)
 
 
 ## User's Guide
@@ -53,7 +56,7 @@ Le préprocessing des bases de données est dans le dossier nettoyage_bdd.
 
 
 
-## Instructions d'exécution
+## Instructions d'execution
 
 - Télécharger le dossier "ProjetV1-master"
 - Le dézipper
