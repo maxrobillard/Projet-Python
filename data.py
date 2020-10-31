@@ -1,7 +1,7 @@
 import pandas as pd
 # Création d'une fonction qui traite et renvoi les données nécessaire en fonction des besoins, prend en parametre une string
 def recuperationDataAlcool(type):
-    csv = pd.read_csv("data/youth_cont.csv")
+    csv = pd.read_csv("data/youth_cont.csv",encoding="utf-8")
     if type == "data":
         return csv
     elif type == "total":
@@ -27,7 +27,7 @@ def recuperationDataAlcool(type):
 
 # Création d'une fonction qui traite et renvoi les données nécessaire en fonction des besoins, prend en parametre une string
 def recuperationDataAccident(type):
-    csv = pd.read_csv("data/jeunes_morts_cont.csv")
+    csv = pd.read_csv("data/jeunes_morts_cont.csv",encoding="utf-8")
     def clear(len,data):
         data = data
         for i in range(len):
@@ -79,7 +79,7 @@ def recuperationDataAccident(type):
 
 # Création d'une fonction qui traite et renvoi les données nécessaire en fonction des besoins, prend en parametre une string
 def recuperationDataTolerance(type):
-    csv = pd.read_csv("data/tolerance_compl.csv")
+    csv = pd.read_csv("data/tolerance_compl.csv",encoding="utf-8")
     if type == "data":
         return csv
     elif type == "MapTolerance":
