@@ -39,6 +39,28 @@ Une fois les packages installés vous devez lancer l'application avec la command
 
 ## Developer's Guide
 
+Ce guide mentionnera l'architecture ainsi que les fonctions utiles du projet ainsi que des pistes de développement.
+
+#### L'architecture du projet
+
+Le projet se décompose en 4 sous-dossiers qui sont Rapport, apps, data, pycache.<br>
+A la racine du projet, il y a 5 fichiers :
+- app.py (initialise l'application et crée le serveur Dash)
+- data.py (Ce fichier met en forme et traite la data afin de la rendre exploitable)
+- main.py (Ce fichier génère le layout en fonction de l'url, il initialise aussi l'application sur l'adresse  localhost:5000/)
+- requirements.txt (Liste de toutes les librairies nécessaire au lancements de l'application)
+- README.md
+
+Le dossier **apps** se compose d'un dossier pycache et de 6 fichiers :
+- **__init__.py** (permet de définir le dossier comme packages)
+- app1.py (contient la page 1 du dashboard)
+- app2.py (contient la page 2 du dashboard)
+- app3.py (contient la page 3 du dashboard)
+- erreur.py (contient la page à afficher en cas de mauvais URL)
+- nav.py (contient la barre de navigation présente sur toutes les pages)
+Le dossier **data** est le dossier où se trouve les csv nécessaire à l'application.<br>
+Le dossier **Rapport** comprend les captures d'écrans des différents graphes affichés.<br>
+
 ## Rapport d'analyse
 
 Les résultats obtenus montrent une nette diminution du nombre d'accidents de la route chez les jeunes.
