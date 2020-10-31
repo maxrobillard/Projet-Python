@@ -28,7 +28,7 @@ layout = html.Div([
     html.Div(id='output-data-upload',style={"width":"90%"}),
 ], style={'width': '100%','height': '100%',"background":"#212121","margin-top":"70px"})
 
-
+# Création d'une fonction qui affiche sous forme d'un tableau les csv demandés,prend comme parametre une string indiquant le chemin d'accès au fichier
 def parse_contents(filename):
 
     df = pd.read_csv(filename)

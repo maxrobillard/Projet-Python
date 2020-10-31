@@ -12,11 +12,11 @@ from data import recuperationDataAccident, recuperationDataTolerance
 
 from app import app
 
-# mettre le code ici ( layout + callbacks)
+
 
 active = "page2"
 nav = NavBar(active)
-
+# création d'une fonction qui retourne une map, elle prend en paramètres le scope(localsiation), data(les données),colorFrench(nom francais),legendColor(Couleur d'affiche des données)
 def choroplethGraph(scope,data,color,colorFrench,legendColor):
     fig = px.choropleth(data , locations='Alpha-3 code', color=color,
                                color_continuous_scale=legendColor,
@@ -27,18 +27,19 @@ def choroplethGraph(scope,data,color,colorFrench,legendColor):
                               )
     return fig
 
+# ouverture du csv sur les accidents
 jeunes_morts = recuperationDataAccident("data")
 #-----------------------------------------------------------------------------------------
+# Récupération des données nettoyées
 csv = recuperationDataAccident("dataClear")
 #------------------------------------------------------------------------------------------
+# Récupération de la liste des pays
 pays_possibles = recuperationDataAccident("PaysSelect")
-data = pd.read_csv("data/tolerance_compl.csv")
+# ouverture du csv sur la tolérance d'alcool
+data = recuperationDataTolerance("data")
+# Renvoie les noms nécessaires à l'affichage des maps 
 dataSelect,dataFrench = recuperationDataTolerance("MapTolerance")
 
-
-
-
-#fig2 = choroplethGraph("world",jm,"Value","Valeur","Viridis")
 
 tolerance = html.Div(
                 dcc.Graph(

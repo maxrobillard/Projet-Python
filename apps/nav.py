@@ -32,17 +32,3 @@ def NavBar(active):
         pills=True,className="fixed-top"
     )
     return nav
-
-def CollapseBar(active):
-
-    Vnav = dbc.Collapse(
-                dbc.Nav(
-                    [
-                        dbc.NavLink("Graphe jeune"),
-
-                    ],
-                    vertical = True,
-
-                ),
-                id = "collapse",
-    )
