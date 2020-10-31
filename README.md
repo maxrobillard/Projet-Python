@@ -45,8 +45,9 @@ Les résultats obtenus montrent une nette diminution du nombre d'accidents de la
 C'est en Europe et en Amérique du Sud que les jeunes consomment le plus d'alcool (53% des jeunes en consomment en Europe, et 36% en Amérique du Sud).
 
 &nbsp;
-![HistogrammeMoyenneAlcool](Rapport/HistogrammeMoyenneAlcool.JPG)
+![Histogramme](Rapport/HistogrammeMoyenneAlcool.JPG)
 &nbsp;
+
 
 
 En Europe, la limite légale de concentration d'alcool dans le sang pour les jeunes conducteurs est d'environ 0.03g (en moyenne).
